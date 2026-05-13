@@ -5,7 +5,9 @@ function App() {
 
   return (
     <div>
-      <h1>Hello, my name is {name}</h1>
+      <h1 style={{ color: "blue" }}>
+        Hello, my name is {name}
+      </h1>
 
       <p>I study at {school}</p>
 
