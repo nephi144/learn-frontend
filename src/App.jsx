@@ -1,17 +1,11 @@
-function App() {
-  const name = "Mark"
-  const school = "BYU-Hawaii"
-  const major = "Computer Science"
+import Profile from "./Profile"
 
+function App() {
   return (
     <div>
       <h1 style={{ color: "blue" }}>
-        Hello, my name is {name}
-      </h1>
-
-      <p>I study at {school}</p>
-
-      <p>My major is {major}</p>
+        My React App</h1>
+      <Profile />
     </div>
   )
 }
