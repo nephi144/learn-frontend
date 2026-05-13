@@ -1,0 +1,4 @@
+What technology you are learning? I'm learning React right now, but I wanted to do React Native but its better to start from level 1. 
+What you already know about it (be honest)? Creating a React project using Vite, running the local host, variables, and inputing the first component. I was really confused at first and hand to read a lot and try a lot since there has been errors. 
+What you are building toward — a frontend that connects to the REST API you are building in the course that I can use the knowledge for my start-up company. 
+How much time per week you have available? Basically around 6 to 9 hours per week at best.
