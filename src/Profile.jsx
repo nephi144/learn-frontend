@@ -1,10 +1,13 @@
-function Profile() {
+function ProfileCard(props) {
   return (
     <div>
-      <h2>Mark Nephi Simene</h2>
-      <p>Computer Science Student</p>
+      <h2>{props.name}</h2>
+
+      <p>{props.major}</p>
+
+      <p>{props.school}</p>
     </div>
   )
 }
 
-export default Profile
+export default ProfileCard
