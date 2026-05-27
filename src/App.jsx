@@ -1,7 +1,8 @@
-import ProfileCard from "./ProfileCard"
-import Counter from "./Counter"
-
+import ProfileCard from "./components/ProfileCard"
+import Counter from "./components/Counter"
 import PostCard from "./components/PostCard"
+import CreatePostForm from "./components/CreatePostForm"
+
 
 function App() {
 
@@ -29,18 +30,27 @@ function App() {
   ]
 
   return (
-<div>
-  <h1>Counselor Wellness Posts</h1>
+    <div>
 
-  {posts.map((post) => (
-    <PostCard
-      key={post.id}
-      title={post.title}
-      content={post.content}
-      category={post.category}
-    />
-  ))}
-</div>
+      <h1>React Week 1 Practice</h1>
+
+      <Counter />
+
+      <ProfileCard />
+
+      <h1>Counselor Wellness Posts</h1>
+
+      {posts.map((post) => (
+        <PostCard
+          key={post.id}
+          title={post.title}
+          content={post.content}
+          category={post.category}
+        />
+      ))}
+      <CreatePostForm />
+
+    </div>
   )
 }
 
