@@ -1,20 +1,40 @@
 import { useState } from "react"
 
-function CreatePostForm() {
+function CreatePostForm({ addPost }) {
 
   const [title, setTitle] = useState("")
   const [content, setContent] = useState("")
   const [category, setCategory] = useState("")
 
+  function handleSubmit(event) {
+
+    event.preventDefault()
+
+    const newPost = {
+      title,
+      content,
+      category,
+    }
+
+    addPost(newPost)
+
+    setTitle("")
+    setContent("")
+    setCategory("")
+  }
+
   return (
-    <div
+    <form
+      onSubmit={handleSubmit}
       style={{
         border: "1px solid #ccc",
         padding: "20px",
         borderRadius: "10px",
         marginBottom: "20px",
+        backgroundColor: "#f9fafb",
       }}
     >
+
       <h2>Create Wellness Post</h2>
 
       <input
@@ -22,42 +42,52 @@ function CreatePostForm() {
         placeholder="Enter title"
         value={title}
         onChange={(event) => setTitle(event.target.value)}
+        style={{
+          width: "100%",
+          padding: "10px",
+          marginBottom: "10px",
+        }}
       />
-
-      <br />
-      <br />
 
       <textarea
         placeholder="Enter content"
         value={content}
         onChange={(event) => setContent(event.target.value)}
+        style={{
+          width: "100%",
+          padding: "10px",
+          marginBottom: "10px",
+          height: "100px",
+        }}
       />
-
-      <br />
-      <br />
 
       <input
         type="text"
         placeholder="Enter category"
         value={category}
         onChange={(event) => setCategory(event.target.value)}
+        style={{
+          width: "100%",
+          padding: "10px",
+          marginBottom: "10px",
+        }}
       />
 
-      <br />
-      <br />
+      <button
+        type="submit"
+        style={{
+          padding: "10px 20px",
+          backgroundColor: "#4CAF50",
+          color: "white",
+          border: "none",
+          borderRadius: "5px",
+          cursor: "pointer",
+        }}
+      >
+        Create Post
+      </button>
 
-      <button>Create Post</button>
-
-      <hr />
-
-      <h3>Preview</h3>
-
-      <p><strong>Title:</strong> {title}</p>
-
-      <p><strong>Content:</strong> {content}</p>
-
-      <p><strong>Category:</strong> {category}</p>
-    </div>
+    </form>
   )
 }
 
