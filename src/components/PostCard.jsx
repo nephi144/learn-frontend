@@ -29,6 +29,14 @@ function PostCard(props) {
         >
           Like
         </button>
+        <button
+      className="btn-danger"
+      onClick={() =>
+        props.deletePost(props.id)
+      }
+    >
+      Delete
+    </button>
 
       </div>
 

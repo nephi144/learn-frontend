@@ -6,10 +6,12 @@ import CreatePostForm from "../components/CreatePostForm"
 
 
 function PostsPage() {
+
   const [error, setError] = useState("")
+
   const [loading, setLoading] = useState(true)
+
   const [posts, setPosts] = useState([
-    
     {
       id: 1,
       title: "Take a Deep Breath",
@@ -26,9 +28,16 @@ function PostsPage() {
   ])
 
   useEffect(() => {
-    setTimeout(() => {
-      setLoading(false)
-    }, 1000)
+    fetch("https://jsonplaceholder.typicode.com/posts?_limit=5")
+      .then(response => response.json())
+      .then(data => {
+        setPosts(data)
+        setLoading(false)
+      })
+      .catch(err => {
+        setError("Failed to load posts")
+        setLoading(false)
+      })
   }, [])
 
   if (loading) {
@@ -49,11 +58,22 @@ function PostsPage() {
       },
     ])
   }
+function deletePost(id) {
+
+  const updatedPosts =
+    posts.filter(
+      post => post.id !== id
+    )
+
+  setPosts(updatedPosts)
+}
 
 return (
   <div className="container">
 
     <Navbar />
+
+    {error && <p style={{color: "red"}}>{error}</p>}
 
     <div className="page-header">
 
@@ -78,6 +98,8 @@ return (
           title={post.title}
           content={post.content}
           category={post.category}
+          deletePost={deletePost}
+          id={post.id}
         />
       ))}
 

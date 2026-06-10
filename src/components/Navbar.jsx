@@ -2,6 +2,8 @@ import { Link } from "react-router-dom"
 
 function Navbar() {
 
+  const token = localStorage.getItem("token")
+
   function handleLogout() {
 
     localStorage.removeItem("token")
@@ -12,22 +14,58 @@ function Navbar() {
   }
 
   return (
+    
     <nav className="navbar">
+      
 
-      <Link to="/">Home</Link>
+      <div className="nav-left">
+          <div className="nav-brand">
+    🌿 Amping
+  </div>
+        
 
-      <Link to="/posts">Posts</Link>
+        <Link to="/">
+          Home
+        </Link>
+        
 
-      <Link to="/assignments">Assignments</Link>
+        {token && (
+          <>
+            <Link to="/posts">
+              Posts
+            </Link>
 
-      <Link to="/login">Login</Link>
+            <Link to="/assignments">
+              Assignments
+            </Link>
+          </>
+        )}
 
-      <button
-        className="btn"
-        onClick={handleLogout}
-      >
-        Logout
-      </button>
+      </div>
+
+      <div className="nav-right">
+
+        {!token ? (
+
+          <Link
+            to="/login"
+            className="nav-login"
+          >
+            Login
+          </Link>
+
+        ) : (
+
+          <button
+            className="nav-logout"
+            onClick={handleLogout}
+          >
+            Logout
+          </button>
+
+        )}
+
+      </div>
 
     </nav>
   )

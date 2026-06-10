@@ -1,6 +1,18 @@
 import Navbar from "../components/Navbar"
 
+
 function HomePage() {
+  const token = localStorage.getItem("token")
+  {
+  !token && (
+    <a
+      href="/login"
+      className="btn"
+    >
+      Get Started
+    </a>
+  )
+}
   return (
     <div className="container">
 

@@ -36,14 +36,86 @@ a:hover {
 
 .navbar {
   display: flex;
-  gap: 25px;
-  padding: 18px 24px;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  padding: 18px 30px;
+
   background: white;
-  border-radius: 12px;
+
+  border-radius: 14px;
+
   margin-bottom: 30px;
+
   box-shadow: 0 4px 12px rgba(0,0,0,0.08);
 }
 
+.nav-left {
+  display: flex;
+
+  gap: 30px;
+
+  align-items: center;
+}
+
+.nav-left a {
+  text-decoration: none;
+
+  color: #334155;
+
+  font-weight: 600;
+
+  transition: 0.3s;
+}
+
+.nav-left a:hover {
+  color: #2563eb;
+}
+
+.nav-right {
+  display: flex;
+
+  align-items: center;
+}
+
+.nav-login {
+  text-decoration: none;
+
+  color: #2563eb;
+
+  font-weight: 600;
+}
+
+.nav-logout {
+  background-color: #ef4444;
+
+  color: white;
+
+  border: none;
+
+  padding: 10px 18px;
+
+  border-radius: 8px;
+
+  cursor: pointer;
+
+  font-size: 14px;
+
+  font-weight: 600;
+}
+
+.nav-logout:hover {
+  background-color: #dc2626;
+}
+.nav-brand {
+  font-size: 20px;
+
+  font-weight: 700;
+
+  color: #2563eb;
+}
 /* Cards */
 
 .card {
