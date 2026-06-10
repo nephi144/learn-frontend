@@ -26,6 +26,7 @@ function CreatePostForm({ addPost }) {
   return (
     <form
       onSubmit={handleSubmit}
+      className="form-card"
       style={{
         border: "1px solid #ccc",
         padding: "20px",
@@ -75,6 +76,7 @@ function CreatePostForm({ addPost }) {
 
       <button
         type="submit"
+        className="btn"
         style={{
           padding: "10px 20px",
           backgroundColor: "#4CAF50",

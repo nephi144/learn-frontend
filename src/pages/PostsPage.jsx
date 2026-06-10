@@ -23,7 +23,6 @@ function PostsPage() {
   ])
 
   function addPost(newPost) {
-
     setPosts([
       ...posts,
       {
@@ -34,16 +33,13 @@ function PostsPage() {
   }
 
   return (
-    <div
-      style={{
-        padding: "20px",
-        maxWidth: "900px",
-        margin: "0 auto",
-      }}
-    >
+    <div className="container">
+
       <Navbar />
 
-      <h1>Counselor Wellness Posts</h1>
+      <h1 className="page-title">
+        Counselor Wellness Posts
+      </h1>
 
       <CreatePostForm addPost={addPost} />
 
@@ -55,6 +51,7 @@ function PostsPage() {
           category={post.category}
         />
       ))}
+
     </div>
   )
 }
