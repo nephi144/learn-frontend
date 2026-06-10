@@ -4,7 +4,7 @@ function Navbar() {
   return (
     <nav className="navbar">
       <Link to="/">Home</Link>
-      <Link to="/login">Login</Link>
+      <Link to="/login">Counselor Login</Link>
       <Link to="/posts">Posts</Link>
       <Link to="/assignments">Assignments</Link>
       
