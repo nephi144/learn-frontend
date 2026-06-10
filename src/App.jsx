@@ -4,6 +4,7 @@ import HomePage from "./pages/HomePage"
 import PostsPage from "./pages/PostsPage"
 import AssignmentsPage from "./pages/AssignmentsPage"
 import LoginPage from "./pages/LoginPage"
+import ProtectedRoute from "./components/ProtectedRoute"
 
 function App() {
   return (
@@ -14,15 +15,23 @@ function App() {
           element={<HomePage />}
         />
 
-        <Route
-          path="/posts"
-          element={<PostsPage />}
-        />
+      <Route
+        path="/posts"
+        element={
+          <ProtectedRoute>
+            <PostsPage />
+          </ProtectedRoute>
+        }
+      />
 
-        <Route
-          path="/assignments"
-          element={<AssignmentsPage />}
-        />
+      <Route
+        path="/assignments"
+        element={
+          <ProtectedRoute>
+            <AssignmentsPage />
+          </ProtectedRoute>
+        }
+      />
         <Route
   path="/login"
   element={<LoginPage />}

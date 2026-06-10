@@ -26,6 +26,15 @@ function AssignmentsPage() {
       },
     ])
   }
+  function deleteAssignment(id) {
+
+  const updatedAssignments =
+    assignments.filter(
+      assignment => assignment.id !== id
+    )
+
+  setAssignments(updatedAssignments)
+}
 
   return (
     <div
@@ -44,16 +53,19 @@ function AssignmentsPage() {
       />
 
       {assignments.map((assignment) => (
-        <AssignmentCard
-          key={assignment.id}
-          title={assignment.title}
-          description={assignment.description}
-          assignedTo={assignment.assignedTo}
-          dueDate={assignment.dueDate}
-        />
+      <AssignmentCard
+        key={assignment.id}
+        id={assignment.id}
+        title={assignment.title}
+        description={assignment.description}
+        assignedTo={assignment.assignedTo}
+        dueDate={assignment.dueDate}
+        deleteAssignment={deleteAssignment}
+      />
       ))}
     </div>
   )
+  
 }
 
 export default AssignmentsPage
