@@ -11,7 +11,9 @@ function LoginPage() {
       fakeToken
     )
 
-    alert("Token Stored")
+    alert("Login Successful")
+
+    window.location.href = "/posts"
   }
 
   return (
@@ -20,7 +22,7 @@ function LoginPage() {
       <Navbar />
 
       <h1 className="page-title">
-        Login
+        Counselor Login
       </h1>
 
       <div className="form-card">
