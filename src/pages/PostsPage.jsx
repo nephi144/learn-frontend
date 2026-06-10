@@ -1,11 +1,11 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 
 import Navbar from "../components/Navbar"
 import PostCard from "../components/PostCard"
 import CreatePostForm from "../components/CreatePostForm"
 
 function PostsPage() {
-
+  const [loading, setLoading] = useState(true)
   const [posts, setPosts] = useState([
     {
       id: 1,
@@ -21,6 +21,21 @@ function PostsPage() {
       category: "Sleep",
     },
   ])
+
+  useEffect(() => {
+    setTimeout(() => {
+      setLoading(false)
+    }, 1000)
+  }, [])
+
+  if (loading) {
+    return (
+      <div className="container">
+        <Navbar />
+        <h2>Loading Posts...</h2>
+      </div>
+    )
+  }
 
   function addPost(newPost) {
     setPosts([
