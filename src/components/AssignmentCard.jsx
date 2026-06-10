@@ -25,7 +25,17 @@ function AssignmentCard(props) {
         Delete
       </button>
 
+      <button
+        className="btn"
+        onClick={() =>
+          props.editAssignment(props.id)
+        }
+      >
+        Edit
+      </button>
+
     </div>
+    
   )
 }
 

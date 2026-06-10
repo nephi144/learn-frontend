@@ -36,6 +36,30 @@ function AssignmentsPage() {
   setAssignments(updatedAssignments)
 }
 
+function editAssignment(id) {
+
+  const updatedAssignments =
+    assignments.map(
+      assignment => {
+
+        if (
+          assignment.id === id
+        ) {
+
+          return {
+            ...assignment,
+            title:
+              assignment.title +
+              " (Edited)"
+          }
+        }
+
+        return assignment
+      }
+    )
+
+  setAssignments(updatedAssignments)
+}
   return (
     <div
       style={{
