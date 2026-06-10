@@ -50,18 +50,27 @@ function PostsPage() {
     ])
   }
 
-  return (
-    <div className="container">
+return (
+  <div className="container">
 
-      <Navbar />
+    <Navbar />
 
-      {error && <p>{error}</p>}
+    <div className="page-header">
 
       <h1 className="page-title">
-        Counselor Wellness Posts
+        🌿 Wellness Posts
       </h1>
 
-      <CreatePostForm addPost={addPost} />
+      <p className="page-description">
+        Share wellness tips, mindfulness activities,
+        and mental health resources with students.
+      </p>
+
+    </div>
+
+    <CreatePostForm addPost={addPost} />
+
+    <div className="posts-grid">
 
       {posts.map((post) => (
         <PostCard
@@ -73,7 +82,9 @@ function PostsPage() {
       ))}
 
     </div>
-  )
+
+  </div>
+)
 }
 
 export default PostsPage

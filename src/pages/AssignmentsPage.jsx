@@ -60,35 +60,50 @@ function editAssignment(id) {
 
   setAssignments(updatedAssignments)
 }
-  return (
-    <div
-      style={{
-        padding: "20px",
-        maxWidth: "900px",
-        margin: "0 auto",
-      }}
-    >
-      <Navbar />
+return (
+  <div className="container">
 
-      <h1>Assignments</h1>
+    <Navbar />
 
-      <CreateAssignmentForm
-        addAssignment={addAssignment}
-      />
+<div className="page-header">
 
-      {assignments.map((assignment) => (
-      <AssignmentCard
-        key={assignment.id}
-        id={assignment.id}
-        title={assignment.title}
-        description={assignment.description}
-        assignedTo={assignment.assignedTo}
-        dueDate={assignment.dueDate}
-        deleteAssignment={deleteAssignment}
-      />
-      ))}
-    </div>
-  )
+  <h1 className="page-title">
+    🎯 Student Assignments
+  </h1>
+
+  <p className="page-description">
+    Create wellness activities and monitor student participation.
+  </p>
+
+</div>
+
+<CreateAssignmentForm
+  addAssignment={addAssignment}
+/>
+
+<h2 className="section-title">
+  Active Assignments
+</h2>
+
+<div className="posts-grid">
+
+  {assignments.map((assignment) => (
+    <AssignmentCard
+      key={assignment.id}
+      id={assignment.id}
+      title={assignment.title}
+      description={assignment.description}
+      assignedTo={assignment.assignedTo}
+      dueDate={assignment.dueDate}
+      deleteAssignment={deleteAssignment}
+      editAssignment={editAssignment}
+    />
+  ))}
+
+</div>
+
+  </div>
+)
   
 }
 

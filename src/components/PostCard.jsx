@@ -7,22 +7,30 @@ function PostCard(props) {
   return (
     <div className="card">
 
+      <div className="card-header">
+
+        <span className="tag">
+          {props.category}
+        </span>
+
+      </div>
+
       <h2>{props.title}</h2>
 
       <p>{props.content}</p>
 
-      <span className="tag">
-        {props.category}
-      </span>
+      <div className="card-footer">
 
-      <p>Likes: {likes}</p>
+        <p>❤️ {likes} Likes</p>
 
-      <button
-        className="btn"
-        onClick={() => setLikes(likes + 1)}
-      >
-        Like 👍
-      </button>
+        <button
+          className="btn"
+          onClick={() => setLikes(likes + 1)}
+        >
+          Like
+        </button>
+
+      </div>
 
     </div>
   )

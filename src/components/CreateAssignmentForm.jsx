@@ -27,40 +27,51 @@ function CreateAssignmentForm({ addAssignment }) {
   return (
     <form
       onSubmit={handleSubmit}
-      style={{
-        border: "1px solid #ccc",
-        padding: "20px",
-        borderRadius: "10px",
-        marginBottom: "20px",
-      }}
+      className="form-card"
     >
-      <h2>Create Assignment</h2>
+
+      <h2>Create Wellness Assignment</h2>
+
+      <p className="form-subtitle">
+        Assign wellness activities to students and
+        encourage healthy habits.
+      </p>
+
+      <label>
+        Assignment Title
+      </label>
 
       <input
         type="text"
-        placeholder="Assignment Title"
+        placeholder="Example: 30 Minute Walk"
         value={title}
         onChange={(e) => setTitle(e.target.value)}
       />
 
-      <br /><br />
+      <label>
+        Description
+      </label>
 
       <textarea
-        placeholder="Description"
+        placeholder="Describe the assignment..."
         value={description}
         onChange={(e) => setDescription(e.target.value)}
       />
 
-      <br /><br />
+      <label>
+        Student ID
+      </label>
 
       <input
         type="text"
-        placeholder="Student ID"
+        placeholder="Student001"
         value={assignedTo}
         onChange={(e) => setAssignedTo(e.target.value)}
       />
 
-      <br /><br />
+      <label>
+        Due Date
+      </label>
 
       <input
         type="date"
@@ -68,11 +79,13 @@ function CreateAssignmentForm({ addAssignment }) {
         onChange={(e) => setDueDate(e.target.value)}
       />
 
-      <br /><br />
-
-      <button type="submit">
+      <button
+        type="submit"
+        className="btn"
+      >
         Create Assignment
       </button>
+
     </form>
   )
 }

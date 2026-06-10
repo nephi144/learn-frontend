@@ -9,7 +9,7 @@ function HomePage() {
       <div className="hero">
 
         <h1 className="hero-title">
-          🌿 Welcome to Amping
+           Welcome to Amping
         </h1>
 
         <p className="hero-subtitle">

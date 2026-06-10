@@ -1,4 +1,5 @@
 function AssignmentCard(props) {
+
   return (
     <div className="card">
 
@@ -6,36 +7,41 @@ function AssignmentCard(props) {
 
       <p>{props.description}</p>
 
-      <p>
-        <strong>Assigned To:</strong>
-        {" "}
-        {props.assignedTo}
-      </p>
+      <div className="assignment-info">
 
-      <p>
-        <strong>Due Date:</strong>
-        {" "}
-        {props.dueDate}
-      </p>
+        <p>
+          👤 {props.assignedTo}
+        </p>
 
-      <button
-        className="btn"
-        onClick={() => props.deleteAssignment(props.id)}
-      >
-        Delete
-      </button>
+        <p>
+          📅 {props.dueDate}
+        </p>
 
-      <button
-        className="btn"
-        onClick={() =>
-          props.editAssignment(props.id)
-        }
-      >
-        Edit
-      </button>
+      </div>
+
+      <div className="card-actions">
+
+        <button
+          className="btn"
+          onClick={() =>
+            props.editAssignment(props.id)
+          }
+        >
+          Edit
+        </button>
+
+        <button
+          className="btn-danger"
+          onClick={() =>
+            props.deleteAssignment(props.id)
+          }
+        >
+          Delete
+        </button>
+
+      </div>
 
     </div>
-    
   )
 }
 

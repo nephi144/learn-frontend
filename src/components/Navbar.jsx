@@ -6,28 +6,21 @@ function Navbar() {
 
     localStorage.removeItem("token")
 
-    window.location.href =
-      "/login"
+    alert("Logged Out")
+
+    window.location.href = "/login"
   }
 
   return (
     <nav className="navbar">
 
-      <div>
+      <Link to="/">Home</Link>
 
-        <Link to="/">
-          Home
-        </Link>
+      <Link to="/posts">Posts</Link>
 
-        <Link to="/posts">
-          Posts
-        </Link>
+      <Link to="/assignments">Assignments</Link>
 
-        <Link to="/assignments">
-          Assignments
-        </Link>
-
-      </div>
+      <Link to="/login">Login</Link>
 
       <button
         className="btn"
