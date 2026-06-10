@@ -14,3 +14,35 @@ The React Compiler is not enabled on this template because of its impact on dev 
 ## Expanding the ESLint configuration
 
 If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+
+# Amping Frontend
+
+A React frontend application designed for counselors and students.
+
+## Features
+
+- React Router Navigation
+- Authentication Concepts
+- Protected Routes
+- Wellness Posts
+- Wellness Assignments
+- CRUD Operations
+- Responsive Layout
+- Component-Based Architecture
+
+## Technologies
+
+- React
+- Vite
+- JavaScript
+- CSS
+
+## Learning Outcomes
+
+- Components
+- Props
+- useState
+- useEffect
+- React Router
+- CRUD Operations
+- Authentication Concepts

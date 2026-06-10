@@ -4,9 +4,12 @@ import Navbar from "../components/Navbar"
 import PostCard from "../components/PostCard"
 import CreatePostForm from "../components/CreatePostForm"
 
+
 function PostsPage() {
+  const [error, setError] = useState("")
   const [loading, setLoading] = useState(true)
   const [posts, setPosts] = useState([
+    
     {
       id: 1,
       title: "Take a Deep Breath",
@@ -51,6 +54,8 @@ function PostsPage() {
     <div className="container">
 
       <Navbar />
+
+      {error && <p>{error}</p>}
 
       <h1 className="page-title">
         Counselor Wellness Posts
